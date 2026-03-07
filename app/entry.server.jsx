@@ -29,8 +29,8 @@ function handleBotRequest(request, responseStatusCode, responseHeaders, remixCon
           resolve(new Response(stream, { headers: responseHeaders, status: responseStatusCode }));
           pipe(body);
         },
-        onShellError(error) { reject(error); },
-        onError(error) { responseStatusCode = 500; console.error(error); },
+        onShellError(error) { console.error("Shell error (bot):", error); reject(error); },
+        onError(error) { responseStatusCode = 500; console.error("Render error (bot):", error); },
       },
     );
     setTimeout(abort, ABORT_DELAY);
@@ -49,8 +49,8 @@ function handleBrowserRequest(request, responseStatusCode, responseHeaders, remi
           resolve(new Response(stream, { headers: responseHeaders, status: responseStatusCode }));
           pipe(body);
         },
-        onShellError(error) { reject(error); },
-        onError(error) { responseStatusCode = 500; console.error(error); },
+        onShellError(error) { console.error("Shell error (browser):", error); reject(error); },
+        onError(error) { responseStatusCode = 500; console.error("Render error (browser):", error); },
       },
     );
     setTimeout(abort, ABORT_DELAY);

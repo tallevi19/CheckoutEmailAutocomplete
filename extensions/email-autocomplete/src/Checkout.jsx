@@ -61,8 +61,12 @@ function EmailAutocomplete() {
   const visibleSuggestions = suggestions.slice(0, 4);
 
   const handleSuggestionClick = async (domain) => {
-    const newEmail = `${localPart}@${domain}`;
-    await applyEmailChange({ type: "updateEmail", email: newEmail });
+    try {
+      const newEmail = `${localPart}@${domain}`;
+      await applyEmailChange({ type: "updateEmail", email: newEmail });
+    } catch (error) {
+      console.error("Failed to apply email change:", error);
+    }
   };
 
   return (
@@ -79,9 +83,10 @@ function EmailAutocomplete() {
             padding={["extraTight", "tight"]}
             onPress={() => handleSuggestionClick(domain)}
           >
-            <Text size="small">
-              {localPart}@<Text size="small" emphasis="bold">{domain}</Text>
-            </Text>
+            <InlineStack spacing="none">
+              <Text size="small">{localPart}@</Text>
+              <Text size="small" emphasis="bold">{domain}</Text>
+            </InlineStack>
           </Pressable>
         ))}
       </InlineStack>
