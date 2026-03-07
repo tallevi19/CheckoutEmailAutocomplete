@@ -1,0 +1,19 @@
+# Shopify App Configuration
+# Learn more: https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "Checkout Email Autocomplete"
+client_id = ""
+application_url = ""
+embedded = true
+
+[access_scopes]
+scopes = ""
+
+[auth]
+redirect_urls = []
+
+[webhooks]
+api_version = "2024-10"
+
+[pos]
+embedded = false

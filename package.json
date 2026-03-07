@@ -1,0 +1,44 @@
+{
+  "name": "checkout-email-autocomplete",
+  "version": "1.0.0",
+  "description": "Shopify checkout extension that provides email domain autocomplete suggestions",
+  "private": true,
+  "scripts": {
+    "build": "remix vite:build",
+    "dev": "shopify app dev",
+    "config:link": "shopify app config link",
+    "generate": "shopify app generate",
+    "deploy": "shopify app deploy",
+    "config:use": "shopify app config use",
+    "env": "shopify app env",
+    "start": "remix-serve ./build/server/index.js",
+    "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "shopify": "shopify",
+    "graphql-codegen": "graphql-codegen",
+    "vite": "vite"
+  },
+  "dependencies": {
+    "@remix-run/dev": "^2.7.1",
+    "@remix-run/node": "^2.7.1",
+    "@remix-run/react": "^2.7.1",
+    "@shopify/app-bridge-react": "^4.1.2",
+    "@shopify/polaris": "^13.0.0",
+    "@shopify/shopify-app-remix": "^3.0.0",
+    "isbot": "^5.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "remix-serve": "^2.7.1",
+    "vite": "^5.1.0"
+  },
+  "devDependencies": {
+    "@remix-run/eslint-config": "^2.7.1",
+    "@shopify/api-codegen-preset": "^1.0.0",
+    "eslint": "^8.42.0"
+  },
+  "workspaces": [
+    "extensions/*"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

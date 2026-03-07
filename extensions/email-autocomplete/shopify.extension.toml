@@ -1,0 +1,14 @@
+api_version = "2024-10"
+
+[[extensions]]
+type = "ui_extension"
+name = "Email Autocomplete"
+handle = "email-autocomplete"
+
+[extensions.capabilities]
+api_access = false
+network_access = false
+
+[[extensions.targeting]]
+module = "./src/Checkout.jsx"
+target = "purchase.checkout.contact.render-after"

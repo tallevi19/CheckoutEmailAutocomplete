@@ -1,0 +1,9 @@
+{
+  "name": "email-autocomplete",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "shopify app build --path ../../",
+    "dev": "shopify app dev --path ../../"
+  }
+}
