@@ -15,7 +15,8 @@
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "shopify": "shopify",
     "graphql-codegen": "graphql-codegen",
-    "vite": "vite"
+    "vite": "vite",
+    "postinstall": "node scripts/setup-extension.js"
   },
   "dependencies": {
     "@remix-run/dev": "^2.7.1",
