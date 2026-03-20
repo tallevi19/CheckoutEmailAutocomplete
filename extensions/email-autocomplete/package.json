@@ -7,6 +7,6 @@
     "dev": "shopify app dev --path ../../"
   },
   "dependencies": {
-    "@shopify/ui-extensions-react": "^2024.10.0"
+    "@shopify/ui-extensions-react": "*"
   }
 }
