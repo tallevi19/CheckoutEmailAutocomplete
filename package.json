@@ -16,7 +16,7 @@
     "shopify": "shopify",
     "graphql-codegen": "graphql-codegen",
     "vite": "vite",
-    "postinstall": "cd extensions/email-autocomplete && npm install --no-workspaces"
+    "postinstall": "node scripts/setup-extension.js"
   },
   "dependencies": {
     "@remix-run/dev": "^2.7.1",
