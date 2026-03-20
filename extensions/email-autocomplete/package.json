@@ -5,5 +5,8 @@
   "scripts": {
     "build": "shopify app build --path ../../",
     "dev": "shopify app dev --path ../../"
+  },
+  "dependencies": {
+    "@shopify/ui-extensions-react": "^2024.10.0"
   }
 }
