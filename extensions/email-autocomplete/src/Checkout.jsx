@@ -1,12 +1,12 @@
+import { useState } from "react";
 import {
   reactExtension,
   useEmail,
-  useApplyEmailChange,
   BlockStack,
   InlineStack,
   Pressable,
   Text,
-  Style,
+  Banner,
 } from "@shopify/ui-extensions-react/checkout";
 
 const EMAIL_DOMAINS = [
@@ -29,7 +29,7 @@ export default reactExtension(
 
 function EmailAutocomplete() {
   const email = useEmail();
-  const applyEmailChange = useApplyEmailChange();
+  const [selectedEmail, setSelectedEmail] = useState(null);
 
   // Only show suggestions when user has typed "@" but hasn't finished the domain
   const currentEmail = email ?? "";
@@ -60,11 +60,6 @@ function EmailAutocomplete() {
   // Show at most 4 suggestions
   const visibleSuggestions = suggestions.slice(0, 4);
 
-  const handleSuggestionClick = async (domain) => {
-    const newEmail = `${localPart}@${domain}`;
-    await applyEmailChange({ type: "updateEmail", email: newEmail });
-  };
-
   return (
     <BlockStack spacing="tight">
       <Text size="small" appearance="subdued">
@@ -77,7 +72,7 @@ function EmailAutocomplete() {
             border="base"
             cornerRadius="base"
             padding={["extraTight", "tight"]}
-            onPress={() => handleSuggestionClick(domain)}
+            onPress={() => setSelectedEmail(`${localPart}@${domain}`)}
           >
             <Text size="small">
               {localPart}@<Text size="small" emphasis="bold">{domain}</Text>
@@ -85,6 +80,11 @@ function EmailAutocomplete() {
           </Pressable>
         ))}
       </InlineStack>
+      {selectedEmail && (
+        <Banner status="info">
+          <Text>Complete your email: {selectedEmail}</Text>
+        </Banner>
+      )}
     </BlockStack>
   );
 }
