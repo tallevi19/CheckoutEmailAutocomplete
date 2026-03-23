@@ -2,7 +2,7 @@
 # Learn more: https://shopify.dev/docs/apps/tools/cli/configuration
 
 name = "Checkout Email Autocomplete"
-client_id = ""
+client_id = "5dd24fb67ff8b546e09bcee19cc03fc8"
 application_url = "https://example.com"
 embedded = true
 
@@ -13,7 +13,7 @@ scopes = ""
 redirect_urls = []
 
 [webhooks]
-api_version = "2024-10"
+api_version = "2025-04"
 
 [pos]
 embedded = false
