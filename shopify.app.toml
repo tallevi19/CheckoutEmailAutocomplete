@@ -3,7 +3,7 @@
 
 name = "Checkout Email Autocomplete"
 client_id = ""
-application_url = ""
+application_url = "https://example.com"
 embedded = true
 
 [access_scopes]
